@@ -18,7 +18,7 @@
   }
 
    & .title{
-      @apply text-5xl uppercase font-thin tracking-widest text-slate-900;
+      @apply text-5xl text-center uppercase font-thin tracking-widest text-slate-900;
    }
 }
 </style>
