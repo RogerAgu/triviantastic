@@ -2,7 +2,7 @@
 import BaseTitle from '@/components/BaseTitle.vue';
 import { onMounted, ref } from 'vue'
 import { shuffle } from 'lodash-es'
-import { useRoute } from 'vue-router';
+import { useRoute, useRouter } from 'vue-router';
 import useApi from '@/composables/useApi';
 import useColor from "@/composables/useColor";
 import useScore from '@/composables/useScore';
@@ -10,7 +10,8 @@ import DifficultyChip from '@/components/DifficultyChip.vue'
 import NotificationAnswers from '@/components/NotificationAnswers.vue'
 
 const api = useApi()
-const route = useRoute();
+const route = useRoute()
+const router = useRouter()
 const question = ref(null)
 const answers = ref([])
 const colors = useColor()
@@ -22,7 +23,7 @@ const handleAnswer = (points) => {
   showNotification.value = true
   setTimeout(() => {
     changeScore(points)
-    router.push('/')
+    router.push('/triviantastic/')
   }, 1000)
 }
 
